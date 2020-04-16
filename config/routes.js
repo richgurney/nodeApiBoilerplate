@@ -3,11 +3,13 @@ var router = express.Router();
 
 var carController = require('../controllers/carController');
 var apiController = require('../controllers/apiController');
-var speakOutController = require('../controllers/speakoutController');
+var assessmentController = require('../controllers/assessmentController');
 
+router.route('/assessment')
+  .get(assessmentController.getForm)
+  .post(assessmentController.sendAssessment)
 
-// API
-router.route('/api/speakout')
-  .get(speakOutController.response)
+router.route('/assessment/success')
+  .get(assessmentController.success)
 
 module.exports = router;

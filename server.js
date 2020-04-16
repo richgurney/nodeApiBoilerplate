@@ -7,16 +7,17 @@ var server        = require('http').createServer(app);
 var port          = process.env.PORT || 3333;
 var methodOVR     = require('method-override');
 var ejsLayouts    = require('express-ejs-layouts');
+require('dotenv').config()
 
 //Database setup and connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/speakout');
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  // we're connected!
-  console.log('DATABASE CONNECTED!!');
-});
+// mongoose.connect('mongodb://localhost/speakout');
+// var db = mongoose.connection;
+// db.on('error', console.error.bind(console, 'connection error:'));
+// db.once('open', function() {
+//   // we're connected!
+//   console.log('DATABASE CONNECTED!!');
+// });
 
 // Layout manager
 app.set('view engine', 'ejs');

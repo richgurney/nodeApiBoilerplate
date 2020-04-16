@@ -1,35 +1,31 @@
-<% for(i=0; i< cars.length; i++){  %>
-  <div class="row" id="blogTitle">
-    <div class='col-xs-6'>
-      <h2 class="titles"><%= cars[i].name %></h2>
-    </div>
-  </div>
-  <div class="row" id="carsContainer">
-    <br>
-    <div class='col-md-5'>
-      <div id="imageContainer">
-        <br>
-        <img id="carsImage" src="<%=cars[i].image %>" height="300" width="365">
-      </div>
-      <br>
-    </div>
-    <div class='col-md-7' id="carsText">
-      <br>
-      <p><%= cars[i].description %></p>
-    </div>
-    <div class="row" id="blogContainer">
-  <br>
-  <div class='col-md-12'>
-    <div id="buttonContainer">
-      <form id="formButton" method="GET" action='/cars/<%= cars[i]._id %>' >
-        <input id="buttons" type="submit" value="Show" class="btn btn-primary btn-block">
-      </form>
-      <br>
-      <br>
-    </div>
-  </div>
+<div class="logo">
+  <img class="logoHeader" src="/images/Sparta.png" alt="Sparta Logo">
 </div>
-  </div>
-  <br>
-  <br>
-<% } %>
+<form class="formStyle" action="/assessment" method='POST'>
+    <h3 class="title">ASSESSMENT DISPATCHER</h3>
+    <div class="form-group">
+      <label for="assessment">Assessment:</label>
+      <select class="dropdown"id="assessment" name="assessment" value="learning" >
+        <option value="learning">Python Learning Path</option>
+        <option value="python">Python</option>
+        <option value="java">Java</option>
+        <option value="csharp">C#</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="candidate_name">Candidate Name:</label>
+      <input name="candidate_name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter candidate name" required/>
+    </div>
+    <div class="form-group">
+      <label for="candidate_email">Candidate Email:</label>
+      <input name="candidate_email"type="email" placeholder="Enter candidate e-mail" class="form-control" name="candidate_email" required/>
+    </div>
+    <div class="form-group">
+      <label for="recruiter_email">Recruiter Email:</label>
+
+      <input name="recruiter_email" type="email" placeholder="Enter recruiter e-mail" class="form-control" name="recruiter_email" required/>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-secondary submit">Submit</button>
+    </div>
+</form>
